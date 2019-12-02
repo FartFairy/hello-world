@@ -5,7 +5,7 @@ url: http://www.z285.top/
 permalink: ':title/'
 
 markdown: kramdown
-baseurl: "/karna"
+baseurl: "/"
 full-version: "http://webjeda.com/karna-full/"
 
 sass:

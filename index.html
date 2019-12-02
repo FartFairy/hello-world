@@ -1,12 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Z285</title>
-<link rel="shortcut icon" type="image/x-icon" href="../images/my.ico"/>
-</head>
-<body>
-	<h1>Hello World!!!!</h1>
-	<img alt="图片" src="http://b.hiphotos.baidu.com/image/pic/item/908fa0ec08fa513db777cf78376d55fbb3fbd9b3.jpg">
-</body>
-</html>
+---
+layout: default
+---
+<div id="container">
+<div id="grid" data-columns class="cols">
+    {% for post in site.posts %}
+    <div class="box" style="background-color:#{{post.color}}">
+       {% if post.img %}
+          <img class="feat-image" src={{ "/images/" | prepend: site.baseurl | append: post.img }} alt="{{post.title}}">
+       {% endif %}
+          <div class="container">
+            <h4>{{post.title}}</h4>
+            <p>{{post.description}}</p>
+             <div class="action">{{ post.date | date: '%B %d, %Y' }}<a href="{{post.url | prepend: site.baseurl}}"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></div> 
+        </div>   
+    </div>
+   {% endfor %}
+
+</div>
+</div>
+
+<script src="{{site.baseurl}}/js/salvattore.min.js"></script>
